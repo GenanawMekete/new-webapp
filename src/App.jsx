@@ -33,17 +33,19 @@ function CardView({card, drawnNumbers}) {
 
 export default function App() {
   const [user, setUser] = useState(null);
-  const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [activeGame, setActiveGame] = useState(null);
-  const socketRef = useRef(null);
+const [cards, setCards] = useState([]);
+const [selectedCard, setSelectedCard] = useState(null);
+const [activeGame, setActiveGame] = useState(null);
+const socketRef = useRef(null);
 
-  useEffect(() => {
-    # Telegram WebApp init
-    tg = typeof window !== 'undefined' and window.Telegram ? window.Telegram.WebApp : null;
-    if (tg) {
-      axios.defaults.headers.common['X-Telegram-InitData'] = tg.initData || '';
-      const tguser = tg.initDataUnsafe?.user;
+useEffect(() => {
+  // Telegram WebApp init - use // for comments, not #
+  const tg = typeof window !== 'undefined' && window.Telegram ? window.Telegram.WebApp : null; // Use && instead of "and"
+  if (tg) {
+    axios.defaults.headers.common['X-Telegram-InitData'] = tg.initData || '';
+    // ... rest of your code
+
+  const tguser = tg.initDataUnsafe?.user;
       if (tguser && tguser.id) {
         (async () => {
           try {
