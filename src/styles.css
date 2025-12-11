@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme matching screenshots */
+:root{
+  --bg:#e9d3f0;
+  --panel:#f6eefe;
+  --accent:#ff7a00;
+  --green:#2fb26f;
+  --muted:#c9b7d8;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg), #f7f0fb);
+}
+
+/* basic card tile */
+.card-tile {
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 56px;
+  min-height: 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+}
+.tile-available { background: #efe6fb; color:#333; border:2px solid #eee; }
+.tile-reserved { background: #ffedd6; color:#ad4b00; border:2px solid #ffb47a; }
+.tile-sold { background: #ffd9d9; color:#8b2e2e; border:2px solid #ff9a9a; }
+
+.cell {
+  width:56px; height:56px; display:flex; align-items:center; justify-content:center;
+  border-radius:8px; margin:4px; background:#f5f0fa; font-weight:700;
+}
+.cell.free { background:#fff1b8; }
+.cell.drawn { box-shadow: 0 0 0 3px rgba(255,122,0,0.18); }
+
+/* bingo button */
+.bingo-btn {
+  background: var(--accent); color: white; font-weight:800; padding:14px 24px; border-radius:12px;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.08);
+}
